@@ -32,6 +32,8 @@ INSTALLED_APPS = [
   # 我的应用程序
   'learning_logs',
   'users',
+  # Third party apps.
+  'bootstrap4',
   'django.contrib.admin',
   'django.contrib.auth',
   'django.contrib.contenttypes',
