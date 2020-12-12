@@ -23,8 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '4x(sp!(!27ce0!turdtal_6yn9o%s&1epz))6k^f5g$5tx118b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
+# DEBUG = False
+DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
+#用于收集静态文件
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
 # Application definition
@@ -122,5 +124,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static")
+# ]
 LOGIN_URL = 'users:login'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
